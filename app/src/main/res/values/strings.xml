@@ -9,9 +9,13 @@
     <string name="small">Small $1.45</string>
     <string name="medium">Medium $1.55</string>
     <string name="large">Large $1.75</string>
+    <string name="threebythree">3x3 $3.50</string>
+    <string name="fourByFour">4x4 $4.00</string>
+    <string name="Hundredbyhundred">100x100 $10.75</string>
+    <string name="animalFries">Animal Fries $3.75</string>
+    <string name="cheeseFries">Cheese Fries $3.45</string>
 
     <string name="orderButton">PLACE ORDER</string>
-
 
 
     <string name="Ttotal">Order Total: </string>
@@ -20,7 +24,7 @@
     <string name="Ttax">Tax(8%): </string>
 
 
-    <string name="newOrder">Start New Order</string>
+    <string name="newOrder" translatable="false">Start New Order</string>
 
 
 </resources>

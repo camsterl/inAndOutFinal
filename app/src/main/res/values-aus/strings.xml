@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="placeOrder">Orda</string>
+    <string name="doubleDouble">Doubleo $3.60</string>
+    <string name="cheeseburger">Cheesy $2.15</string>
+    <string name="Fries">Chips $1.65</string>
+    <string name="Shakes">Frothy $2.20</string>
+    <string name="fountainDrinks">Soft Drink  (pick size)</string>
+    <string name="small">Joey $1.45</string>
+    <string name="medium">Wallaby $1.55</string>
+    <string name="large">Kangaroo $1.75</string>
+    <string name="threebythree">3x3 $3.50</string>
+    <string name="fourByFour">4x4 $4.00</string>
+    <string name="Hundredbyhundred">100x100 $10.75</string>
+    <string name="animalFries">Animal Chips $3.75</string>
+    <string name="cheeseFries">Cheese Chips $3.45</string>
+    <string name="Ttotal">Orda</string>
+    <string name="orderButton" translatable="false">Placeya Orda</string>
+    <string name="Titems">Items Ordad</string>
+    <string name="Tsubtotal">Subbers</string>
+    <string name="Ttax">Theft(8%)</string>
+</resources>

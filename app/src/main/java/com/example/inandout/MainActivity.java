@@ -8,6 +8,7 @@ import android.widget.EditText;
 
 import com.example.inandout.model.Order;
 
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
 
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private Order order;
 
     NumberFormat currency = NumberFormat.getCurrencyInstance(Locale.getDefault());
+    DecimalFormat df = new DecimalFormat("#.#");
 
 
 
@@ -47,13 +49,35 @@ public class MainActivity extends AppCompatActivity {
 
     public void switchToOrderSummary(View v)
     {
-        int cheese = parseInt(cheeseburgers.getText().toString());
-        int doubleD = parseInt(doubleDouble.getText().toString());
-        int frenchF = parseInt(frenchFries.getText().toString());
-        int shake = parseInt(shakes.getText().toString());
-        int Small =parseInt(small.getText().toString());
-        int Medium = parseInt(medium.getText().toString());
-        int Large = parseInt(large.getText().toString());
+        int cheese = 0, doubleD = 0, frenchF = 0, shake = 0, Small = 0, Medium = 0, Large = 0;
+
+        try {
+            cheese = parseInt(cheeseburgers.getText().toString());
+        } catch(NumberFormatException e) {}
+
+        try {
+         doubleD = parseInt(doubleDouble.getText().toString());
+         } catch(NumberFormatException e) {}
+
+        try {
+         frenchF = parseInt(frenchFries.getText().toString());
+        } catch(NumberFormatException e) {}
+
+        try {
+         shake = parseInt(shakes.getText().toString());
+        } catch(NumberFormatException e) {}
+
+        try {
+         Small =parseInt(small.getText().toString());
+        } catch(NumberFormatException e) {}
+
+        try {
+         Medium = parseInt(medium.getText().toString());
+        } catch(NumberFormatException e) {}
+
+        try {
+         Large = parseInt(large.getText().toString());
+        } catch(NumberFormatException e) {}
 
         order.setCheeseburgers(cheese);
         order.setDoubleDouble(doubleD);
@@ -63,15 +87,63 @@ public class MainActivity extends AppCompatActivity {
         order.setMediumDrinks(Medium);
         order.setLargeDrinks(Large);
 
-        Intent intent = new Intent(this, Order.class);
+        Intent intent = new Intent(this, summaryActivity1.class);
 
 
         intent.putExtra("subtotal", currency.format(order.calculateSubtotal()));
         intent.putExtra("tax", currency.format(order.calculateTax()));
         intent.putExtra("total", currency.format(order.calculateTotal()));
-        intent.putExtra("items", order.itemsOrdered());
+        intent.putExtra("items", df.format(order.itemsOrdered()));
 
         startActivity(intent);
 
+    }
+
+    public void secretMenuSwitch(View v)
+    {
+        int cheese = 0, doubleD = 0, frenchF = 0, shake = 0, Small = 0, Medium = 0, Large = 0;
+
+        try {
+            cheese = parseInt(cheeseburgers.getText().toString());
+        } catch(NumberFormatException e) {}
+
+        try {
+            doubleD = parseInt(doubleDouble.getText().toString());
+        } catch(NumberFormatException e) {}
+
+        try {
+            frenchF = parseInt(frenchFries.getText().toString());
+        } catch(NumberFormatException e) {}
+
+        try {
+            shake = parseInt(shakes.getText().toString());
+        } catch(NumberFormatException e) {}
+
+        try {
+            Small =parseInt(small.getText().toString());
+        } catch(NumberFormatException e) {}
+
+        try {
+            Medium = parseInt(medium.getText().toString());
+        } catch(NumberFormatException e) {}
+
+        try {
+            Large = parseInt(large.getText().toString());
+        } catch(NumberFormatException e) {}
+
+        order.setCheeseburgers(cheese);
+        order.setDoubleDouble(doubleD);
+        order.setFrenchFries(frenchF);
+        order.setShakes(shake);
+        order.setSmallDrinks(Small);
+        order.setMediumDrinks(Medium);
+        order.setLargeDrinks(Large);
+
+        Intent intent = new Intent(this, SecretMenu.class);
+        intent.putExtra("subtotal", currency.format(order.calculateSubtotal()));
+        intent.putExtra("tax", currency.format(order.calculateTax()));
+        intent.putExtra("total", currency.format(order.calculateTotal()));
+        intent.putExtra("items", df.format(order.itemsOrdered()));
+        startActivity(intent);
     }
 }

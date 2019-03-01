@@ -8,6 +8,11 @@ public class Order {
     private int mMediumDrinks;
     private int mSmallDrinks;
     private int mShakes;
+    private int threeByThree;
+    private int fourByFour;
+    private int hundredByHundred;
+    private int animalFries;
+    private int cheeseFries;
     public static final double PRICE_CHEESEBURGER = 2.15;
     public static final double PRICE_DOUBLE_DOUBLE = 3.6;
     public static final double PRICE_FRENCH_FRIES = 1.65;
@@ -15,16 +20,27 @@ public class Order {
     public static final double PRICE_MEDIUM_DRINKS = 1.55;
     public static final double PRICE_SMALL_DRINKS = 1.45;
     public static final double PRICE_SHAKES = 2.20;
+    public static final double PRICE_THREE = 3.00;
+    public static final double PRICE_FOUR = 4.00;
+    public static final double PRICE_HUNDRED = 10.75;
+    public static final double PRICE_ANIMAL_FRIES = 3.75;
+    public static final double PRICE_CHEESE_FRIES = 3.45;
+
     public static final double TAX_RATE = 0.08;
 
-    public Order(int cheeseburgers, int doubleDouble, int frenchFries, int largeDrinks, int mediumDrinks, int smallDrinks, int shakes) {
-        mCheeseburgers = cheeseburgers;
-        mDoubleDouble = doubleDouble;
-        mFrenchFries = frenchFries;
-        mLargeDrinks = largeDrinks;
-        mMediumDrinks = mediumDrinks;
-        mSmallDrinks = smallDrinks;
-        mShakes = shakes;
+    public Order(int mCheeseburgers, int mDoubleDouble, int mFrenchFries, int mLargeDrinks, int mMediumDrinks, int mSmallDrinks, int mShakes, int threeByThree, int fourByFour, int hundredByHundred, int animalFries, int cheeseFries) {
+        this.mCheeseburgers = mCheeseburgers;
+        this.mDoubleDouble = mDoubleDouble;
+        this.mFrenchFries = mFrenchFries;
+        this.mLargeDrinks = mLargeDrinks;
+        this.mMediumDrinks = mMediumDrinks;
+        this.mSmallDrinks = mSmallDrinks;
+        this.mShakes = mShakes;
+        this.threeByThree = threeByThree;
+        this.fourByFour = fourByFour;
+        this.hundredByHundred = hundredByHundred;
+        this.animalFries = animalFries;
+        this.cheeseFries = cheeseFries;
     }
 
     public Order() {
@@ -87,7 +103,45 @@ public class Order {
         mShakes = shakes;
     }
 
+    public int getThreeByThree() {
+        return threeByThree;
+    }
 
+    public void setThreeByThree(int threeByThree) {
+        this.threeByThree = threeByThree;
+    }
+
+    public int getFourByFour() {
+        return fourByFour;
+    }
+
+    public void setFourByFour(int fourByFour) {
+        this.fourByFour = fourByFour;
+    }
+
+    public int getHundredByHundred() {
+        return hundredByHundred;
+    }
+
+    public void setHundredByHundred(int hundredByHundred) {
+        this.hundredByHundred = hundredByHundred;
+    }
+
+    public int getAnimalFries() {
+        return animalFries;
+    }
+
+    public void setAnimalFries(int animalFries) {
+        this.animalFries = animalFries;
+    }
+
+    public int getCheeseFries() {
+        return cheeseFries;
+    }
+
+    public void setCheeseFries(int cheeseFries) {
+        this.cheeseFries = cheeseFries;
+    }
 
     @Override
     public String toString() {
@@ -99,12 +153,17 @@ public class Order {
                 ", mMediumDrinks=" + mMediumDrinks +
                 ", mSmallDrinks=" + mSmallDrinks +
                 ", mShakes=" + mShakes +
+                ", threeByThree=" + threeByThree +
+                ", fourByFour=" + fourByFour +
+                ", hundredByHundred=" + hundredByHundred +
+                ", animalFries=" + animalFries +
+                ", cheeseFries=" + cheeseFries +
                 '}';
     }
 
     public int itemsOrdered()
     {
-        return mCheeseburgers + mDoubleDouble + mSmallDrinks + mMediumDrinks +mLargeDrinks +mFrenchFries + mShakes;
+        return mCheeseburgers + mDoubleDouble + mSmallDrinks + mMediumDrinks +mLargeDrinks +mFrenchFries + mShakes + threeByThree + fourByFour + hundredByHundred + animalFries + cheeseFries;
     }
 
     public double calculateSubtotal()
@@ -112,7 +171,8 @@ public class Order {
         return (mCheeseburgers * PRICE_CHEESEBURGER) + (mDoubleDouble * PRICE_DOUBLE_DOUBLE)
                 + (mFrenchFries * PRICE_FRENCH_FRIES) + (mShakes * PRICE_SHAKES)
                 +(mLargeDrinks * PRICE_LARGE_DRINKS) + (mMediumDrinks *PRICE_MEDIUM_DRINKS) +
-                (mSmallDrinks * PRICE_SMALL_DRINKS);
+                (mSmallDrinks * PRICE_SMALL_DRINKS) + (threeByThree * PRICE_THREE) + (fourByFour * PRICE_FOUR) +
+                (hundredByHundred * PRICE_HUNDRED) + (animalFries + PRICE_ANIMAL_FRIES) + (cheeseFries * PRICE_CHEESE_FRIES);
 
     }
 

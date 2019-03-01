@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-public class SummaryActivity extends AppCompatActivity {
+public class summaryActivity1 extends AppCompatActivity {
 
 
     private TextView total;
@@ -18,7 +18,7 @@ public class SummaryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.summary_activity);
+        setContentView(R.layout.activity_summary1);
 
         total = findViewById(R.id.total);
         subtotal = findViewById(R.id.subtotal);
